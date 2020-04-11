@@ -1,0 +1,17 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+
+pokemon:
+    path: /pokemon
+    controller: App\Controller\PokemonController::index
+    
+pokedex:
+    path: /pokedex/
+    controller: App\Controller\PokedexController::index
+
+pokedexid:
+    path: /pokedex/{id}
+    controller: App\Controller\PokedexController::id
+
+    

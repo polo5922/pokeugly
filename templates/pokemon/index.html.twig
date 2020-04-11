@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    {% for pokemon in pokemons %}
+    
+        <h3>{{pokemon.name}} - <img src="img/type/{{pokemon.type}}.png"> - {{pokemon.nature}} - 
+        {% if pokemon.pokemonId|length == 1 %}
+            <img src="img/pokemon/Miniature_00{{pokemon.pokemonId}}_XY.png"> - <img src="img/pokemon/Sprite_00{{pokemon.pokemonId}}_XY.png"></h3>
+        {% endif %}
+        {% if pokemon.pokemonId|length == 2 %}
+            <img src="img/pokemon/Miniature_0{{pokemon.pokemonId}}_XY.png"> - <img src="img/pokemon/Sprite_0{{pokemon.pokemonId}}_XY.png"></h3>
+        {% endif %}
+        {% if pokemon.pokemonId|length == 3 %}
+            <img src="img/pokemon/Miniature_{{pokemon.pokemonId}}_XY.png"> - <img src="img/pokemon/Sprite_{{pokemon.pokemonId}}_XY.png"></h3>
+        {% endif %}
+    {% endfor %}
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/symphony/pokemon_battle/src/Controller/PokemonController.php'|file_link(0) }}">src/Controller/PokemonController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/wamp64/www/symphony/pokemon_battle/templates/pokemon/index.html.twig'|file_link(0) }}">templates/pokemon/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}

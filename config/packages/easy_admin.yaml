@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        - App\Entity\Attaque
+        - App\Entity\Ball
+        - App\Entity\Pokemon
+        - App\Entity\Potion
+        - App\Entity\User

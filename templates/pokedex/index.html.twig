@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonController!{% endblock %}
+
+{% block body %}
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    a{text-decoration:none;color:black}
+    a:hover{text-decoration:none;color:black}
+    .col-sm-2{border:1px solid blue}
+</style>
+
+<div class="example-wrapper">
+<div class="container">
+    <div class="row">
+    {% for pokemon in pokemons %}
+    
+        <a data-toggle="tooltip" title="{{pokemon.name}}" href="/pokedex/{{pokemon.pokemonId}}"><div class="col-sm-2">
+        {% if pokemon.pokemonId|length == 1 %}
+            <img src="/img/pokemon/Miniature_00{{pokemon.pokemonId}}_XY.png" width="100%" height="100%"></a></div>
+        {% endif %}
+        {% if pokemon.pokemonId|length == 2 %}
+            <img src="/img/pokemon/Miniature_0{{pokemon.pokemonId}}_XY.png" width="100%" height="100%"></a><br></div>
+        {% endif %}
+        {% if pokemon.pokemonId|length == 3 %}
+            <img src="/img/pokemon/Miniature_{{pokemon.pokemonId}}_XY.png" width="100%" height="100%"></a><br></div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}
